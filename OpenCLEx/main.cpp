@@ -22,6 +22,7 @@
 
 #include <CL/cl2.hpp>
 
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <cassert>
@@ -62,6 +63,7 @@ static cl_uint getPlatformVersion(const cl::Platform& platform)
 
     std::string version = platform.getInfo<CL_PLATFORM_VERSION>();
 
+    std::cout << "getPlatformVersion " << version << std::endl;
     // The platform version string has the form:
     //   OpenCL <Major>.<Minor> <Vendor Specific Info>
     const std::string prefix{"OpenCL "};
